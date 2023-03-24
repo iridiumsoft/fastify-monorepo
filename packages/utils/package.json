@@ -1,0 +1,10 @@
+{
+    "name": "utils",
+    "dependencies": {
+        "fastify": "^4.15.0",
+        "jsonwebtoken": "9.0.0"
+    },
+    "devDependencies": {
+        "types": "workspace:*"
+    }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "v2-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "turbo run dev --continue",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "prettier": "latest",
+    "turbo": "latest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,6 @@
+{
+    "name": "types",
+    "dependencies": {
+        "fastify": "^4.15.0"
+    }
+}
