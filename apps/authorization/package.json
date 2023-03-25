@@ -1,14 +1,11 @@
 {
   "name": "authorization",
   "scripts": {
-    "dev": "tsx watch src/index.ts"
+    "dev": "npx tsx watch src/index.ts"
   },
   "dependencies": {
     "fastify": "^4.15.0",
-    "services": "workspace:services",
-    "utils": "workspace:utils"
-  },
-  "devDependencies": {
-    "tsx": "3.12.6"
+    "services": "workspace:*",
+    "utils": "workspace:*"
   }
 }

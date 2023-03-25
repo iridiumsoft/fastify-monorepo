@@ -1,12 +1,10 @@
 ```
-npm install
-npm run start
+docker-compose up
 ```
 
 ```
 open http://localhost:3000
 ```
-
 
 # SOLID Principles
     1. Single Responsibility Principle
