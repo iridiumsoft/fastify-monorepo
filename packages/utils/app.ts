@@ -28,6 +28,7 @@ fastify.addHook('onRequest', AdminOnly);
 fastify.setErrorHandler((error, request, reply) => {
 	fastify.log.error(error);
 	let response = {};
+	console.log(error);
 
 	// pass additional error data to the client if exists
 	// @ts-ignore

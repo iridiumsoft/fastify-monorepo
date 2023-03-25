@@ -1,3 +1,5 @@
-export const Insert = (data: any) => {
-    return 'DB INSERT';
-}
+import { PrismaClient, Prisma } from '@prisma/client'
+
+const prisma = new PrismaClient();
+
+export default prisma as PrismaClient;
