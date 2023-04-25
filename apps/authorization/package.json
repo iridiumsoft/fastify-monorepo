@@ -1,7 +1,11 @@
 {
   "name": "authorization",
+  "type": "module",
   "scripts": {
     "dev": "tsx watch src/index.ts",
+    "test": "vitest --run --reporter=verbose",
+    "test:ui": "vitest --ui",
+    "test:run": "vitest run",
     "build": "rm -rf build && tsx esbuild.ts"
   },
   "dependencies": {

@@ -1,4 +1,4 @@
-const Login = () => {
+const Login = async () => {
     return 'Hello from login...';
 }
 

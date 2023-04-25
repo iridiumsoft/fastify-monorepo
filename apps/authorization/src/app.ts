@@ -1,3 +1,2 @@
-import {app} from 'utils';
-
+import app from 'utils/app';
 export default app;
