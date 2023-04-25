@@ -1,5 +1,8 @@
 ```
-docker-compose up
+pnpm install
+```
+```
+pnpm dev
 ```
 
 ```
