@@ -5,15 +5,23 @@
   "main": "index.js",
   "scripts": {
     "dev": "turbo run dev --continue",
+    "build": "turbo run build --continue",
     "generate": "cd packages/db && yarn generate",
     "prisma:migrate": "cd packages/db && yarn prisma:migrate",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "fastify": "^4.15.0",
     "prettier": "latest",
     "turbo": "latest"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "5.0.3",
+    "esbuild": "0.17.14",
+    "tiny-glob": "0.2.9",
+    "tsx": "3.12.6"
+  }
 }

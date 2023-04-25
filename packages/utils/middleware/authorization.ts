@@ -18,11 +18,11 @@ export const CheckLogin = async (request: FastifyRequest, reply: FastifyReply) =
 	if (!PUBLIC_ROUTES.has(urlPrefx)) {
 		const token = request.headers['authorization'];
 		// throw error if token doesn't exist or not valid.
-		if (!token || !(await jwt.verify(token, process.env.ENCRYPTION_KEY))) {
+		if (!token || !(jwt.verify(token, process.env.ENCRYPTION_KEY || ''))) {
 			return reply.status(401).send();
 		}
-		const decoded = await jwt.decode(token, process.env.ENCRYPTION_KEY);
-		request.user = decoded;
+		const decoded = jwt.decode(token);
+		request.user = decoded || null as any;
 	}
 };
 

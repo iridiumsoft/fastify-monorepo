@@ -1,6 +1,7 @@
+import { FastifyReply } from 'fastify';
 import { FastifyRequest } from 'fastify/types/request';
 
-const ALLOWED_ORIGINS = {
+const ALLOWED_ORIGINS: Record<string, 1> = {
 	'http://localhost:3001': 1,
 	'http://localhost:3002': 1,
 	'http://localhost:8787': 1,
@@ -8,7 +9,7 @@ const ALLOWED_ORIGINS = {
 	'https://app.weblit.com': 1
 };
 
-export default (req: FastifyRequest, reply, done) => {
+export default (req: FastifyRequest, reply: FastifyReply, done: any) => {
 	const { origin } = req.headers;
 	if (!origin || ALLOWED_ORIGINS[origin]) {
 		reply.header('Access-Control-Allow-Origin', '*');

@@ -10,18 +10,11 @@
   "compilerOptions": {
     "rootDir": "./src", // must define
     "baseUrl": ".", // must define, the paths will relative to this
+    "esModuleInterop": true,
+    "lib": ["ES2022"],
     "module": "commonjs",
-    "esModuleInterop": false,
-    "target": "es2021",
-    "noImplicitAny": false,
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "sourceMap": false,
-    "allowJs": true,
+    "target": "ES2022",
     "outDir": "dist",
-    "removeComments": true,
-    "alwaysStrict": false,
-    "skipLibCheck": true,
     "typeRoots": ["src/@types", "./node_modules/@types"],
     "paths": {
       "~/*": ["src/*"]

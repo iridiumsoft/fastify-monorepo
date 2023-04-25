@@ -1,10 +1,10 @@
-import app from '~/app';
+import app from './app';
 import './routes';
 
 // get app port from env or default to 3000
 const port = process.env.PORT && process.env.PORT !== '' ? parseInt(process.env.PORT) : 3000;
 
-app.get('/', async () => "Fastify is fast!!!");
+app.get('/', async () => "Hello World!");
 
 const start = async () => {
 	try {
