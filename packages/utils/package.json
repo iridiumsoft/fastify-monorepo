@@ -1,9 +1,7 @@
 {
     "name": "utils",
-    "scripts": {
-        "build": "tsup src/index.ts --format cjs --dts"
-    },
     "dependencies": {
+        "dotenv": "^16.0.3",
         "fastify": "^4.15.0"
     },
     "devDependencies": {

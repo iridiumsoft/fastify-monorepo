@@ -1,13 +1,12 @@
-FROM node:19-alpine3.16
+FROM node:16.20.0
+RUN curl -f https://get.pnpm.io/v6.14.js | node - add --global pnpm
+# pnpm fetch does require only lockfile
+COPY pnpm-lock.yaml ./
+# RUN pnpm fetch --prod 
 
-WORKDIR /
+ADD . ./
+RUN pnpm install
 
-COPY . .
-
-RUN npm install -g pnpm && 
-
-RUN pnpm i
-
-EXPOSE 3000
-
-CMD ["pnpm", "dev"]
+# If you need to compile your source, do it here.
+RUN pnpm build
+CMD [ "node", "apps/authorization/build/index.js" ]

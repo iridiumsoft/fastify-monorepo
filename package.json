@@ -7,8 +7,7 @@
     "dev": "turbo run dev --continue",
     "build": "turbo run build --continue",
     "generate": "cd packages/db && yarn generate",
-    "prisma:migrate": "cd packages/db && yarn prisma:migrate",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prisma:migrate": "cd packages/db && yarn prisma:migrate"
   },
   "dependencies": {
     "fastify": "^4.15.0",
@@ -19,9 +18,10 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "typescript": "5.0.3",
     "esbuild": "0.17.14",
     "tiny-glob": "0.2.9",
-    "tsx": "3.12.6"
+    "tsx": "3.12.6",
+    "typescript": "5.0.3",
+    "vitest": "^0.30.1"
   }
 }

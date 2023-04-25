@@ -26,8 +26,11 @@ fastify.addHook('onRequest', AdminOnly);
 
 // error handling
 fastify.setErrorHandler((error, request, reply) => {
+	console.log(error.message);
 	fastify.log.error(error);
-	let response = {};
+	let response = {
+		error: ''
+	};
 	// pass additional error data to the client if exists
 	// @ts-ignore
 	if (error.data) {
@@ -42,4 +45,4 @@ fastify.setErrorHandler((error, request, reply) => {
 process.on('uncaughtException', (error) => console.error(error));
 process.on('unhandledRejection', (error) => console.error(error));
 
-export const app = fastify;
+export default fastify;

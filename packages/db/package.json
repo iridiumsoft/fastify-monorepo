@@ -1,12 +1,8 @@
 {
     "name": "db",
     "version": "0.0.1",
-    "scripts": {
-        "db:generate": "prisma generate",
-        "db:push": "prisma db push --skip-generate",
-        "prisma:migrate": "prisma migrate dev --name init"
-    },
+    "scripts": {},
     "dependencies": {
-        "@prisma/client": "^4.11.0"
+        "pg": "^8.10.0"
     }
 }
