@@ -10,21 +10,19 @@ import glob from 'tiny-glob'
         outdir: 'build',
         bundle: true,
         minify: true,
-        external: ['pg-native', 'fs'],
+        external: ['pg-native'],
         platform: 'node',
         format: 'esm',
         splitting: true,
         treeShaking: true,
-        sourcemap: false,
+        sourcemap: true,
         banner:{
-          js: `
-          import path from 'path';
+          js: `import path from 'path';
           import { fileURLToPath } from 'url';
           import { createRequire as topLevelCreateRequire } from 'module';
           const require = topLevelCreateRequire(import.meta.url);
           const __filename = fileURLToPath(import.meta.url);
-          const __dirname = path.dirname(__filename);
-          `
-      },
+          const __dirname = path.dirname(__filename);`
+        },
     })
 })()

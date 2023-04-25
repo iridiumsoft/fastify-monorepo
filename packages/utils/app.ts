@@ -1,10 +1,10 @@
-import * as fs from 'fs';
+const fs = require('fs');
 import * as dotenv from 'dotenv';
 import Fastify, { FastifyInstance } from 'fastify';
 import { AdminOnly, CheckLogin } from './middleware/authorization';
 import cors from './middleware/cors';
 
-const envPath = __dirname + '/.env';
+const envPath = './.env';
 
 if (fs.existsSync(envPath)) {
 	dotenv.config({ path: envPath });
@@ -22,7 +22,6 @@ fastify.addHook('onRequest', CheckLogin);
 
 // // validate admin only routes
 fastify.addHook('onRequest', AdminOnly);
-
 
 // error handling
 fastify.setErrorHandler((error, request, reply) => {
