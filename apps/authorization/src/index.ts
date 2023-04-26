@@ -1,6 +1,6 @@
 import app from '~/app';
 import './routes';
-import dbclient from 'db';
+import dbclient from 'db/index';
 
 // get app port from env or default to 3000
 const port = process.env.PORT && process.env.PORT !== '' ? parseInt(process.env.PORT) : 3000;

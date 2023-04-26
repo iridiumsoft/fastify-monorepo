@@ -1,10 +1,10 @@
-const fs = require('fs');
+import * as fs from 'fs';
 import * as dotenv from 'dotenv';
 import Fastify, { FastifyInstance } from 'fastify';
 import { AdminOnly, CheckLogin } from './middleware/authorization';
 import cors from './middleware/cors';
 
-const envPath = './.env';
+const envPath = __dirname + '/.env';
 
 if (fs.existsSync(envPath)) {
 	dotenv.config({ path: envPath });
