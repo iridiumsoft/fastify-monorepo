@@ -9,8 +9,8 @@ app.get('/', async () => "Fastify 🚀");
 
 const start = async () => {
 	try {
-		await app.listen({ port, host: '0.0.0.0' });
 		await dbclient.connect();
+		await app.listen({ port, host: '0.0.0.0' });
 		console.log(`Fastify 🚀 http://localhost:${port}`);
 		app.ready();
 	} catch (err) {

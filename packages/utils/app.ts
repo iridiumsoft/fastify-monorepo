@@ -1,8 +1,8 @@
 import * as fs from 'fs';
 import * as dotenv from 'dotenv';
 import Fastify, { FastifyInstance } from 'fastify';
-import { AdminOnly, CheckLogin } from './middleware/authorization';
-import cors from './middleware/cors';
+import { AdminOnly, CheckLogin } from '../middleware/authorization';
+import cors from '../middleware/cors';
 
 const envPath = __dirname + '/.env';
 

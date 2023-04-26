@@ -1,0 +1,10 @@
+{
+    "name": "middleware",
+    "dependencies": {
+        "jsonwebtoken": "9.0.0",
+        "fastify": "^4.15.0"
+    },
+    "devDependencies": {
+        "@types/jsonwebtoken": "^9.0.0"
+    }
+}
