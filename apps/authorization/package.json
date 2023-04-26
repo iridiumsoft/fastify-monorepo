@@ -1,6 +1,5 @@
 {
   "name": "authorization",
-  "type": "module",
   "scripts": {
     "dev": "tsx watch src/index.ts",
     "test": "vitest --run --reporter=verbose",

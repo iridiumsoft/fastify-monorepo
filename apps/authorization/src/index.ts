@@ -1,4 +1,4 @@
-import app from '~/app';
+import app from 'utils/app';
 import './routes';
 import dbclient from 'db/index';
 
