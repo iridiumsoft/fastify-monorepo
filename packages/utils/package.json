@@ -2,6 +2,7 @@
     "name": "utils",
     "dependencies": {
         "dotenv": "^16.0.3",
+        "middleware": "workspace:*",
         "fastify": "^4.16.3"
     },
     "devDependencies": {

@@ -1,8 +1,9 @@
 import * as fs from 'fs';
 import * as dotenv from 'dotenv';
 import Fastify, { FastifyInstance } from 'fastify';
-import { AdminOnly, CheckLogin } from '../middleware/authorization';
-import cors from '../middleware/cors';
+import { AdminOnly, CheckLogin } from 'middleware/authorization';
+import cors from 'middleware/cors';
+import {captureMessageWithRequestBody} from './sentry';
 
 const envPath = __dirname + '/.env';
 
@@ -38,7 +39,15 @@ fastify.setErrorHandler((error, request, reply) => {
 	} else {
 		response = { error: error.message };
 	}
-	reply.status(error.statusCode || 500).send(response);
+	const statusCode = error.statusCode || 500;
+	if (statusCode < 600 && statusCode >= 500) {
+		captureMessageWithRequestBody({
+			message: error.message,
+			level: 'error',
+			user: request.user
+		});
+	}
+	reply.status(statusCode).send(response);
 });
 
 process.on('uncaughtException', (error) => console.error(error));
