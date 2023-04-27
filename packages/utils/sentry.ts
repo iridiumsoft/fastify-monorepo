@@ -9,11 +9,11 @@ type CaptureMessageInput = {
 
 Sentry.init({
 	dsn: process.env.SENTRY_DSN,
-	release: process.env.VERSION,
+	release: process.env.VERSION || '0.0.0',
 });
 
 export const captureMessageWithRequestBody = (props: CaptureMessageInput) => {
-	if (process.env.ENV !== 'prod') {
+	if (process.env.ENV !== 'production') {
 		return;
 	}
 	if (props.user) {
